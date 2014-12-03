@@ -15,6 +15,8 @@ df<-read.csv.sql("household_power_consumption.txt", colClasses=colclass,
 # Get the rows where data >= 2007-02-01 and date <= 2007-02-01
 df<-df[as.Date(df$Date, '%d/%m/%Y')>=startDate,]
 df<-df[as.Date(df$Date, '%d/%m/%Y')<=endDate,]
-#png("plot2.png")
-plot(df$Global_active_power, as.Date(df$date), type="l")
-#dev.off()
+png("plot2.png", width=480, height=480)
+d <- c("Thu", "Fri", "Sat")
+plot(df$Global_active_power, xaxt='n', type="l", xlab='', ylab="Global active power (kilowatts)")
+axis(1, at=c(0, nrow(df)/2,nrow(df)), label=d )
+dev.off()
