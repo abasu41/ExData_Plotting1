@@ -21,7 +21,7 @@ plot(df$Sub_metering_1, xaxt='n', type="l", xlab='', ylab="Global active power (
 lines(df$Sub_metering_2, col='red')
 lines(df$Sub_metering_3, col='blue')
 axis(1, at=c(0, nrow(df)/2,nrow(df)), label=d )
-legend(x=1300,y=40, 
+legend(x="topright", y=NULL, 
        c('Sub_metering_1', 'Sub_metering_2', 'Sub_metering_3'), 
        lty=c(1,1,1), lwd=c(1.5,1.5,1.5),col=c("black","blue","red"))
 
