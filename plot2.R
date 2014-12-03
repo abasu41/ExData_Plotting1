@@ -1,4 +1,3 @@
-install.packages('sqldf')
 
 library(dplyr)
 library(sqldf)

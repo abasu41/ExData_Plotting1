@@ -1,5 +1,3 @@
-install.packages('sqldf')
-
 library(dplyr)
 library(sqldf)
 # Columns are Date;Time;Global_active_power;Global_reactive_power;
@@ -17,7 +15,7 @@ df<-df[as.Date(df$Date, '%d/%m/%Y')>=startDate,]
 df<-df[as.Date(df$Date, '%d/%m/%Y')<=endDate,]
 png("plot3.png", width=480, height=480)
 d <- c("Thu", "Fri", "Sat")
-plot(df$Sub_metering_1, xaxt='n', type="l", xlab='', ylab="Global active power (kilowatts)")
+plot(df$Sub_metering_1, xaxt='n', type="l", xlab='', ylab="Energy sub metering")
 lines(df$Sub_metering_2, col='red')
 lines(df$Sub_metering_3, col='blue')
 axis(1, at=c(0, nrow(df)/2,nrow(df)), label=d )
